@@ -14,9 +14,12 @@ course_students = {
     "Backend": len(backend_students)
 }
 for course, students in course_students.items():
-    print("Course: {course}, Students: {students}")
-course_with_fullstack = {
-    **course_students,
-    "Fullstack": course_students["Frontend"] + course_students["Backend"]
-}
+    print(f"Course: {course}, Students: {students}")
+
+course_with_fullstack = course_students.copy()
+
+course_with_fullstack["Fullstack"] = (
+    course_students["Frontend"] + course_students["Backend"]
+)
+
 print("Course with Fullstack:", course_with_fullstack)
